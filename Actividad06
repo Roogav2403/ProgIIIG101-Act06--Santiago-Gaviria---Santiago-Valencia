@@ -19,3 +19,18 @@ persona(ling, [], selma).
 
 padre(P, H) :- persona(H, P, _).
 madre(M, H) :- persona(H, _, M).
+
+abuelo(A, N) :- padre(A, P), padre(P, N).
+abuelo(A, N) :- padre(A, P), madre(P, N).
+abuela(A, N) :- madre(A, P), padre(P, N).
+abuela(A, N) :- madre(A, P), madre(P, N).
+
+
+hermano(H1, H2) :- persona(H1, P, M), persona(H2, P, M), H1 \= H2.
+
+
+primo(P1, P2) :- padre(P, P1), padre(P, P2), P1 \= P2.
+primo(P1, P2) :- madre(M, P1), madre(M, P2), P1 \= P2.
+
+
+nieto(N, A) :- abuelo(A, N); abuela(A, N).
