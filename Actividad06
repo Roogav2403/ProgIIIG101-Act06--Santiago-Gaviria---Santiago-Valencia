@@ -1,1 +1,9 @@
+%ejercicio de la familia Simspsons con Listas y estructuras
+
+% Permitir definiciones no contiguas para evitar advertencias
+:- discontiguous padre/2.
+:- discontiguous madre/2.
+:- discontiguous hermano/2.
+:- discontiguous primo/2.
+:- discontiguous nieto/2.
 
