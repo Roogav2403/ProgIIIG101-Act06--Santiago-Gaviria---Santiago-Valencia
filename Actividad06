@@ -7,3 +7,15 @@
 :- discontiguous primo/2.
 :- discontiguous nieto/2.
 
+persona(homero, abraham, mona).
+persona(herbert, abraham, mona).
+persona(marge, clancy, jacqueline).
+persona(patty, clancy, jacqueline).
+persona(selma, clancy, jacqueline).
+persona(bart, homero, marge).
+persona(lisa, homero, marge).
+persona(maggie, homero, marge).
+persona(ling, [], selma). 
+
+padre(P, H) :- persona(H, P, _).
+madre(M, H) :- persona(H, _, M).
